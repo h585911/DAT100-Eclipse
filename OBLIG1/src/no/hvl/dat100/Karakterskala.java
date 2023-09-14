@@ -53,12 +53,27 @@ public class Karakterskala {
 				JOptionPane.showMessageDialog(null, "Input kan ikke være tom.");
 				antallKarakterer--;
 			} else {
+				/*
+				 * Dersom verdien fra brukeren er korrekt, gjør vi om verdien fra en String til int.
+				 * Definerer også noen ekstra variabler som brukes lokalt i for-løkken.
+				 * Den boolske variabelen 'isValid' brukes for å sjekke om poengsummen brukeren
+				 * skriver inn er gyldig.
+				 * Dvs. isValid settes til true DERSOM og KUN DERSOM poengsummen er ett heltall mellom 0 og 100.
+				 */
 				int outputKarakter = Integer.parseInt(inputKarakter);
 				String karakter = null;
 				int poengMin = 0;
 				int poengMax = 0;
 				boolean isValid = false;
 				
+				/*
+				 * En ny for-løkke defineres for å iterere gjennom alle elementene i 
+				 * variabelen 'karakterSkala'. 
+				 * Dersom verdien fra brukeren finnes i noen av variablene 'poengLow' og 'poengHigh',
+				 * settes karakteren tilsvarende poengsum, poengMin settes lik minimum poenggrense,
+				 * og poengMax settes lik maksimum poenggrense.
+				 * den boolske variabelen isValid settes også til true.
+				 */
 				for (int i = 0; i < karakterSkala.length; i++) {
 					if (outputKarakter >= poengLow[i] && outputKarakter <= poengHigh[i]) {
 						karakter = karakterSkala[i];
