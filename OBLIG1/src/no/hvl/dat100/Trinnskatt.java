@@ -27,9 +27,9 @@ public class Trinnskatt {
 	 *  Hvordan beregnes den progressive trinnskatten (Eksempel)?:
 	 *  Bruttoinntekt: 1 100 000kr
 	 *  
-	 *  (1): (279 149kr - 198 350kr) * 1,7 % = 1373,583kr ≈ 1374kr
-	 *  (2): (642 949kr - 279 150kr) * 4,0 % = 14551,96kr ≈ 14552kr
-	 *  (3): (926 799kr - 642 950kr) * 13,5 % = 38319,615kr ≈ 38320kr
+	 *  (1): (279 149kr - 198 350kr) * 1,7 %    = 1373,583kr ≈ 1374kr
+	 *  (2): (642 949kr - 279 150kr) * 4,0 %    = 14551,96kr ≈ 14552kr
+	 *  (3): (926 799kr - 642 950kr) * 13,5 %   = 38319,615kr ≈ 38320kr
 	 *  (4): (1 100 000kr - 926 800kr) * 16,5 % = 28578kr
 	 *  
 	 *  Trinnskatt totalt = 1374kr + 14552kr + 38320kr + 28578kr = 82824kr
