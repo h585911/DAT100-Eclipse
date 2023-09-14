@@ -1,17 +1,68 @@
 package no.hvl.dat100;
 
+import java.text.MessageFormat;
+
 import javax.swing.JOptionPane;
 
 public class Trinnskatt {
 	
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
-		String userInput = JOptionPane.showInputDialog("Skriv inn bruttolønn: ");
-		double userInputToDouble = Double.parseDouble(userInput);
+		boolean isValid = false;
 		
-		double parseTrinnskatt = beregnTrinnskatt(userInputToDouble);
+		/*
+		 * While-løkke som kjører så lenge den boolske variabelen 'isValid' er false
+		 */
+		while (!isValid) {
+			
+			/*
+			 * Dialogvindu slik at brukeren kan skrive inn bruttolønn.
+			 * Velger å begnytte JOptionPane i stedet for konsollvinduet.
+			 */
+			String userInput = JOptionPane.showInputDialog("Skriv inn bruttolønn: ");
 
-		JOptionPane.showMessageDialog(null, "Trinnskatt for bruttoinntekt på " + userInputToDouble + "kr er: " + parseTrinnskatt + "kr");
+			/*
+			 * Dersom brukeren trykker på 'Cancel'-knappen i showInputDialog,
+			 * settes verdien for userInput til null.
+			 * Dette er for å forhindre at vi får feilmeldingen java.lang.NullPointerException,
+			 * som sier at vi ikke har noen verdi for 'userInput'.
+			 */
+			if (userInput == null) {
+				System.out.println("inputKarakter.JOptionPane.showInputDialog.CANCEL_BUTTON");
+				break;
+			} else if (userInput.isEmpty()) {
+				/*
+				 * Dersom brukeren ikke skriver noe i dialogvinduet, skriver vi ut en feilmelding,
+				 * og setter 'isValid' til false, slik at dialogvinduet for bruttolønn kommer på nytt.
+				 */
+				JOptionPane.showMessageDialog(null, "Input kan ikke være tom.");
+				isValid = false;
+			} else {
+				/*
+				 * Dersom verdien brukeren skriver inn er gyldig, gjøres userInput om fra Streng til Double.
+				 * Kaller metoden 'beregnTrinnskatt' med parameteret 'userInputToDouble' som er bruttolønnen.
+				 */
+				double userInputToDouble = Double.parseDouble(userInput);
+				double parseTrinnskatt = beregnTrinnskatt(userInputToDouble);
+				
+				/*
+				 * Etter metoden er kjørt, og trinnskatten er beregnet skriver vi ut resultatet i ett nytt dialogvindu.
+				 * 
+				 * Biblioteket java.text.MessageFormat brukes for å formatere output, 
+				 * slik at vi kan bruke argumenter direkte i output.
+				 * 
+				 * Siden vi arbeider med Double datatyper, velger jeg å formatere antall desimaler på resultatet.
+				 * Derfor benyttes String.format("%.2f", userInputToDouble) og String.format("%.2f", parseTrinnskatt)
+				 * som gjør om både input fra bruker, og resultatet, til to desimaler.
+				 * 
+				 * Den boolske variabelen 'isValid' settes lik true, og while-løkken stopper.
+				 */
+				String printOutput = MessageFormat.format("Trinnskatt for bruttoinntekt på {0}kr er: {1}kr.", String.format("%.2f", userInputToDouble), String.format("%.2f", parseTrinnskatt));
+				JOptionPane.showMessageDialog(null, printOutput);
+				
+				isValid = true;
+			}
+		}
 	}
 	
 	/*
@@ -71,5 +122,4 @@ public static void main(String[] args) {
 		// Returnerer den beregnede trinnskatten.
 		return beregnetTrinnskatt;
 	}
-
 }
