@@ -6,6 +6,7 @@ public class Trinnskatt {
 		// TODO Auto-generated method stub
 
 		System.out.println("Hello GitHub!");
+		// This is a test
 	}
 
 }
