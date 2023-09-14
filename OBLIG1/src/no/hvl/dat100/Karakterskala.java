@@ -69,6 +69,10 @@ public class Karakterskala {
 				/*
 				 * En ny for-løkke defineres for å iterere gjennom alle elementene i 
 				 * variabelen 'karakterSkala'. 
+				 * 
+				 * @param	karakterSkala		alle karakterene i tabellen
+				 * @return						karakterutsrkift med poengsum.
+				 * 
 				 * Dersom verdien fra brukeren finnes i noen av variablene 'poengLow' og 'poengHigh',
 				 * settes karakteren tilsvarende poengsum, poengMin settes lik minimum poenggrense,
 				 * og poengMax settes lik maksimum poenggrense.
