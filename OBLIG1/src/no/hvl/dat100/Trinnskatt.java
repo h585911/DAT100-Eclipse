@@ -1,7 +1,9 @@
 package no.hvl.dat100;
 
-public class Trinnskatt {
+import javax.swing.JOptionPane;
 
+public class Trinnskatt {
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -36,11 +38,23 @@ public class Trinnskatt {
 	 *  Dette utgir 7,53 % av bruttoinntekt.
 	 *  (82824/1100000)*100 = 7,53 %
 	 */
+	
+	/*
+	 * En metode for beregning av trinnskatt av bruttoinntekt.
+	 * Metoden beregnes som vist ovenfor.
+	 * 
+	 * @param       bruttoInntekt   Bruttoinntekt som brukeren spesifiserer i dialogboksen
+	 * @return      trinnskatt      Returnerer beregnet trinnskatt
+	 */
 	public static double beregnTrinnskatt(double bruttoInntekt) {
 		
-		return bruttoInntekt;
+		/*
+		 * Vi trenger noen tabeller for å hjelpe oss å holde styr på innslagspunktene i trinnskatten.
+		 */
 		
-		// Endret på Windows PC
+		
+		
+		return bruttoInntekt;
 	}
 
 }
