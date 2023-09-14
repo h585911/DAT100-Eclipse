@@ -90,10 +90,10 @@ public class Karakterskala {
 				
 				/*
 				 * Dersom den boolske variabelen isValid er false, skriver vi ut en feilmelding.
-				 * Velger å bruke java.text.MessageFormat for å formattere output.
-				 * Dette gjør vi slik at vi kan bruke argumenter (eks. {0} for outputKarakter) i utskriften.
-				 * Dette gjøres for å kunne bruke argumenter (eks. {0} for outputKarakter) i utskriften, 
+				 * Velger å bruke java.text.MessageFormat til formatering slik at vi kan bruke argumentene direkte i output.
+				 * Dette gjør at vi kan bruke f.eks. {0} for outputKarakter i utskriften,
 				 * i stedet for å bruke println(outputkarakter + " er ikke en gyldig verdi.").
+				 * 
 				 * Dersom isValid er false, går vi tilbake en iterasjon.
 				 */
 				if (!isValid) {
