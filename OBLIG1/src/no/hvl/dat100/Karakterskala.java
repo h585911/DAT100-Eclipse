@@ -24,7 +24,7 @@ public class Karakterskala {
 		 * Iterer gjennom alle karakterer brukeren skal skrive inn, i dette tilfellet en.
 		 * Start med første iterasjon og inkrementer med en etter hver gyldig verdi fra brukeren.
 		 * 
-		 * @param	antallKarakterer	antall karakterer brukeren skal skrive inn
+		 * @param	antallKarakterer	antall karakterer brukeren skal skrive inn.
 		 * @return						utskrift av karakter og poengsum.
 		 */
 		for (int antallKarakterer = 0; antallKarakterer < 10; antallKarakterer++) {
