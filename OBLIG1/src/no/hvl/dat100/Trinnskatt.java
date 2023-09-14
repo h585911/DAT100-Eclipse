@@ -4,10 +4,14 @@ import javax.swing.JOptionPane;
 
 public class Trinnskatt {
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public static void main(String[] args) {
+		
+		String userInput = JOptionPane.showInputDialog("Skriv inn bruttolønn: ");
+		double userInputToDouble = Double.parseDouble(userInput);
+		
+		double parseTrinnskatt = beregnTrinnskatt(userInputToDouble);
 
-		System.out.println(beregnTrinnskatt(100000));
+		JOptionPane.showMessageDialog(null, "Trinnskatt for bruttoinntekt på " + userInputToDouble + "kr er: " + parseTrinnskatt + "kr");
 	}
 	
 	/*
@@ -48,13 +52,24 @@ public class Trinnskatt {
 	 */
 	public static double beregnTrinnskatt(double bruttoInntekt) {
 		
-		/*
-		 * Vi trenger noen tabeller for å hjelpe oss å holde styr på innslagspunktene i trinnskatten.
-		 */
+		double beregnetTrinnskatt = 0.0;
 		
-		
-		
-		return bruttoInntekt;
+		if(bruttoInntekt <= 198349) {
+			beregnetTrinnskatt = 0.0; // Trinnskatt for innslagspunkt (0)
+		} else if (bruttoInntekt >= 198350 && bruttoInntekt <= 279149) {
+			beregnetTrinnskatt = (bruttoInntekt - 198350) * 0.017; // Trinnskatt for innslagspunkt (1)
+		} else if (bruttoInntekt >= 279150 && bruttoInntekt <= 642949) {
+			beregnetTrinnskatt = ((279149 - 198350) * 0.017) + ((bruttoInntekt - 279150) * 0.040); // Trinnskatt for innslagspunkt (2)
+		} else if (bruttoInntekt >= 642950 && bruttoInntekt <= 926799) {
+			beregnetTrinnskatt = ((279149 - 198350) * 0.017) + ((642949 - 279150) * 0.040) + ((bruttoInntekt - 642950) * 0.135); // Trinnskatt for innslagspunkt (3)
+		} else if (bruttoInntekt >= 926800 && bruttoInntekt <= 1499999) {
+			beregnetTrinnskatt = ((279149 - 198350) * 0.017) + ((642949 - 279150) * 0.040) + ((926799 - 642950) * 0.135) + ((bruttoInntekt - 926800) * 0.165); // Trinnskatt for innslagspunkt (4)
+		} else if (bruttoInntekt >= 1500000) {
+			beregnetTrinnskatt = ((279149 - 198350) * 0.017) + ((642949 - 279150) * 0.040) + ((926799 - 642950) * 0.135) + ((1499999 - 926800) * 0.165) + ((bruttoInntekt - 1500000) * 0.175); // Trinnskatt for innslagspunkt (5)
+		}
+
+		// Returnerer den beregnede trinnskatten.
+		return beregnetTrinnskatt;
 	}
 
 }
