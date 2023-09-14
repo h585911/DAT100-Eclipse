@@ -33,12 +33,12 @@ public class Trinnskatt {
 	 *  (4): (1 100 000kr - 926 800kr) * 16,5 % = 28578kr
 	 *  
 	 *  Trinnskatt totalt = 1374kr + 14552kr + 38320kr + 28578kr = 82824kr
-	 *  Dette utgir 7,53 % av lønnen.
+	 *  Dette utgir 7,53 % av bruttoinntekt.
 	 *  (82824/1100000)*100 = 7,53 %
 	 */
-	public static int beregnTrinnskatt(int nettolonn) {
+	public static double beregnTrinnskatt(double bruttoInntekt) {
 		
-		return nettolonn;
+		return bruttoInntekt;
 	}
 
 }
