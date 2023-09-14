@@ -39,6 +39,8 @@ public class Trinnskatt {
 	public static double beregnTrinnskatt(double bruttoInntekt) {
 		
 		return bruttoInntekt;
+		
+		// Endret på Windows PC
 	}
 
 }
