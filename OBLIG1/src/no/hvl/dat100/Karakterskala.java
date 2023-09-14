@@ -84,11 +84,23 @@ public class Karakterskala {
 					}
 				}
 				
+				/*
+				 * Dersom den boolske variabelen isValid er false, skriver vi ut en feilmelding.
+				 * Velger å bruke java.text.MessageFormat for å formattere output.
+				 * Dette gjør vi slik at vi kan bruke argumenter (eks. {0} for outputKarakter) i utskriften.
+				 * Dette gjøres for å kunne bruke argumenter (eks. {0} for outputKarakter) i utskriften, 
+				 * i stedet for å bruke println(outputkarakter + " er ikke en gyldig verdi.").
+				 * Dersom isValid er false, går vi tilbake en iterasjon.
+				 */
 				if (!isValid) {
 					String printOutputError = MessageFormat.format("{0} er ikke en gyldig verdi.", outputKarakter);
 					JOptionPane.showMessageDialog(null, printOutputError);
 					antallKarakterer--;
 				} else {
+					/*
+					 * Dersom isValid er true, skriver vi ut studentnummer, poeng, karakter samt minimum og maksimum poeng.
+					 * Til slutt legger vi til alle karakterer med studentnr i tabellen arrayKarakterer.
+					 */
 					String printOutput = MessageFormat.format("Studentnummer {0} har {1} poeng\nKarakter: {2}\nPoenggrense for karakter {2} (min/max): {3} / {4}", (antallKarakterer + 1), outputKarakter, karakter, poengMin, poengMax);
 					JOptionPane.showMessageDialog(null, printOutput);
 					
@@ -97,6 +109,9 @@ public class Karakterskala {
 			}
 		}
 		
+		/*
+		 * Skriver ut arrayKarakterer i konsollvinduet.
+		 */
 		System.out.println(Arrays.toString(arrayKarakterer));
 
 	}
