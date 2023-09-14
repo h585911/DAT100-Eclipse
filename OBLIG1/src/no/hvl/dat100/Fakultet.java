@@ -26,7 +26,7 @@ public class Fakultet {
 		 * Fakultet blir beregnet ved å lese inn heltallet fra brukeren (outputFakultet),
 		 * og beregne verdien av n! der n! = 1 * 2 * 3 * ... * (n-1) * n.
 		 * 
-		 * @param	outputFakultet		verdien brukeren ønsker å beregne fakultet for
+		 * @param	outputFakultet		verdien brukeren ønsker å beregne fakultet for.
 		 * @return						beregnet fakultet av verdien
 		 */
 		for (i = 1; i <= outputFakultet; i++) {
