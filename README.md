@@ -1,2 +1,2 @@
 # DAT100-Eclipse
-Obligatoriske innleveringer i emnet DAT100.
+Obligatoriske Java Programmeringsoppgaver i emnet DAT100.
