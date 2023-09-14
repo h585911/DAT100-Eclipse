@@ -10,10 +10,10 @@ public class Karakterskala {
 		
 		/*
 		 * Definerer ulike tabeller vi trenger
-		 * @var		karakterskala	String		Alle gyldige karakterer
-		 * @var		poengLow		int			Minste poengsum for karakter
-		 * @var		poengHigh		int			Høyeste poengsum for karakter
-		 * @var		arrayKarakterer	Object		Alle karakterene med poengsum som brukeren skriver inn
+		 * @var		karakterskala	String		Alle gyldige karakterer.
+		 * @var		poengLow		int			Minste poengsum for karakter.
+		 * @var		poengHigh		int			Høyeste poengsum for karakter.
+		 * @var		arrayKarakterer	Object		Alle karakterene med poengsum som brukeren skriver inn.
 		 */
 		String[] karakterSkala = {"F", "E", "D", "C", "B", "A"};
 		int[] poengLow = {0, 40, 50, 60, 80, 90};
