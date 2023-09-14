@@ -18,11 +18,11 @@ public class Trinnskatt {
 	 * KILDE 1: https://www.skatteetaten.no/satser/trinnskatt/
 	 * KILDE 2: https://www.finanssans.no/artikler/trinnskatt
 	 * 
-	 * 	Første innslagspunkt (1): 	198 350kr 	@ 1,7 	% trinnskatt
-	 * 	Andre innslagspunkt  (2): 	279 150kr 	@ 4,0 	% trinnskatt
-	 *  Tredje innslagspunkt (3): 	642 950kr 	@ 13,5 	% trinnskatt
-	 *  Fjerde innslagspunkt (4): 	926 800kr 	@ 16,5 	% trinnskatt
-	 *  Femte innslagspunkt  (5): 	1 500 000kr @ 17,5 	% trinnskatt
+	 *  Første innslagspunkt (1):   198 350kr   @ 1,7   % trinnskatt
+	 *  Andre innslagspunkt  (2):   279 150kr   @ 4,0   % trinnskatt
+	 *  Tredje innslagspunkt (3):   642 950kr   @ 13,5  % trinnskatt
+	 *  Fjerde innslagspunkt (4):   926 800kr   @ 16,5  % trinnskatt
+	 *  Femte innslagspunkt  (5):   1 500 000kr @ 17,5  % trinnskatt
 	 *  
 	 *  Hvordan beregnes den progressive trinnskatten (Eksempel)?:
 	 *  Bruttoinntekt: 1 100 000kr
