@@ -8,6 +8,9 @@ public class Trinnskatt {
 	
 	public static void main(String[] args) {
 		
+		/*
+		 * Definerer en boolsk variabel som brukes for å validere input fra brukeren.
+		 */
 		boolean isValid = false;
 		
 		/*
@@ -43,24 +46,38 @@ public class Trinnskatt {
 				 * Kaller metoden 'beregnTrinnskatt' med parameteret 'userInputToDouble' som er bruttolønnen.
 				 */
 				double userInputToDouble = Double.parseDouble(userInput);
-				double parseTrinnskatt = beregnTrinnskatt(userInputToDouble);
 				
 				/*
-				 * Etter metoden er kjørt, og trinnskatten er beregnet skriver vi ut resultatet i ett nytt dialogvindu.
-				 * 
-				 * Biblioteket java.text.MessageFormat brukes for å formatere output, 
-				 * slik at vi kan bruke argumenter direkte i output.
-				 * 
-				 * Siden vi arbeider med Double datatyper, velger jeg å formatere antall desimaler på resultatet.
-				 * Derfor benyttes String.format("%.2f", userInputToDouble) og String.format("%.2f", parseTrinnskatt)
-				 * som gjør om både input fra bruker, og resultatet, til to desimaler.
-				 * 
-				 * Den boolske variabelen 'isValid' settes lik true, og while-løkken stopper.
+				 * Sjekker om 'userInputToDouble' er en negativ verdi.
+				 * Dersom den er det, settes 'isValid' til false, og det skrives ut en feilmelding i dialogboks.
 				 */
-				String printOutput = MessageFormat.format("Trinnskatt for bruttoinntekt på {0}kr er: {1}kr.", String.format("%.2f", userInputToDouble), String.format("%.2f", parseTrinnskatt));
-				JOptionPane.showMessageDialog(null, printOutput);
-				
-				isValid = true;
+				if (userInputToDouble < 0) {
+					String printOutputError = MessageFormat.format("{0} er ikke en gyldig verdi.", userInputToDouble);
+					JOptionPane.showMessageDialog(null, printOutputError);
+					isValid = false;
+				} else {
+					/*
+					 * Derom 'userInputToDouble' er gyldig, går vi videre i programmet.
+					 */
+					double parseTrinnskatt = beregnTrinnskatt(userInputToDouble);
+					
+					/*
+					 * Etter metoden er kjørt, og trinnskatten er beregnet skriver vi ut resultatet i ett nytt dialogvindu.
+					 * 
+					 * Biblioteket java.text.MessageFormat brukes for å formatere output, 
+					 * slik at vi kan bruke argumenter direkte i output.
+					 * 
+					 * Siden vi arbeider med Double datatyper, velger jeg å formatere antall desimaler på resultatet.
+					 * Derfor benyttes String.format("%.2f", userInputToDouble) og String.format("%.2f", parseTrinnskatt)
+					 * som gjør om både input fra bruker, og resultatet, til to desimaler.
+					 * 
+					 * Den boolske variabelen 'isValid' settes lik true, og while-løkken stopper.
+					 */
+					String printOutput = MessageFormat.format("Trinnskatt for bruttoinntekt på {0}kr er: {1}kr.", String.format("%.2f", userInputToDouble), String.format("%.2f", parseTrinnskatt));
+					JOptionPane.showMessageDialog(null, printOutput);
+					
+					isValid = true;
+				}
 			}
 		}
 	}
